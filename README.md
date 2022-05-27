@@ -27,3 +27,4 @@ $ python manage.py migrate
 ```
 $ python manage.py runserver
 ```
+Let me know what you think about it and suggest me anything!
