@@ -8,9 +8,8 @@ Yes, ajax and a lot of stuff. (sadly)
 
 ## How to run this app locally
 ### Setup
-Make sure to have python and django to be installed in you computer. Head over to https://www.python.org/downloads/ and https://www.djangoproject.com/download/ for the download guide.
-Once you have downloaded python and django, go to the cloned repo directory and run the following command
-To get this repository, run the following command inside your git enabled terminal
+Make sure to have Python and Django  installed in you computer. Head over to https://www.python.org/downloads/ and https://www.djangoproject.com/download/ for the download guide.
+Once you have downloaded Python and Django, run the following command inside your git enabled terminal.
 ### 1. Clone this repository
 ```
 $ git clone https://github.com/Snowmaru0283/MyToDoList-Web-App.git
