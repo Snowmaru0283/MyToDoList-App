@@ -1,0 +1,18 @@
+{% extends 'todo/layout.html' %}
+{% block body %}
+<div class="container">
+    <form class ="add-form" method="POST" action="{% url 'update' task.id %}">
+        {% csrf_token %}
+        {{form.title}}
+        <a class="check" href="{% url 'check' task.id %}"></a>
+        <button class="invia"><i class="fa fa-paper-plane fa-lg" aria-hidden="true" style="color:#82aafa; font-size: 1.9rem; transition: all .4s;"
+            onMouseOver="
+            this.style.color='#4d73be'"
+            onMouseOut="
+            this.style.color='#82aafa'"
+            "></i></button>
+    </form>
+    <a class ="annulla"href="{% url 'home' %}">Annulla</a>
+</div>
+
+{% endblock %}

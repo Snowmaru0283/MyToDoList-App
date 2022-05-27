@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='/static/todo/style.css' type='text/css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <title>To Do List App</title>
+
+</head>
+
+<body>
+    
+    {% if register == True %}
+    <form class="login-form" method="POST" action="">
+        <h1>MyToDoList</h1>
+        {% csrf_token %}
+        <div class="form-item">
+            <input class="username-input" type="text" name="username" required>
+            <label for="">Username</label>
+        </div>
+        <div class="form-item">
+            <input class="password-input" type="password" name="password1" required>
+            <label for="">Password</label>
+        </div>
+        <div class="form-item">
+            <input class="password-input" type="password" name="password2" required>
+            <label for="">Conferma password</label>
+        </div>
+
+        {% if messages %}
+        {% for message in messages %}
+        <li style="color: red; text-align: left;">{{ message }}</li>
+        {% endfor %}
+        {% endif %}
+        <button class="submit-login-register">Registrati</button>
+        <p>Sei già registrato? <a href="{% url 'login' %}">Accedi</a></p>
+    </form>
+    {% else %}
+    <form class="login-form" method="POST" action="">
+        {% if success%}
+        <h1 class="success-message">{{success}} <i class='fa fa-check-circle fa-1x view-icon' aria-hidden='true'></i></h1>
+        {% endif %}
+        <h1>MyToDoList</h1>
+        {% csrf_token %}
+        <div class="form-item">
+            <input class="username-input" type="text" name="username" required>
+            <label for="">Username</label>
+        </div>
+        <div class="form-item">
+            <input class="password-input" type="password" name="password" required>
+            <label for="">Password</label>
+        </div>
+
+        {% if messages %}
+        {% for message in messages %}
+        <li style="color: red; text-align: left;">{{ message }}</li>
+        {% endfor %}
+        {% endif %}
+        <button class="submit-login-register">Accedi</button>
+        <div class="form-links">
+            <a href="{% url 'register' %}">Registrati</a>
+            <a href="https://twitter.com/snowmaru0283" target="_blank">Contattami</a>
+        </div>
+        
+    </form>
+    {% endif %}
+
+
+
+</body>
+<script src='/static/todo/script.js'></script>
+
+</html>

@@ -1,0 +1,429 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,900&family=Open+Sans&family=Poppins&family=Raleway:wght@400;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #28293D;
+    color: #fff;
+    position: relative;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    background-color: #1b1c27;
+}
+
+#logo{
+    font-size: 2.5rem;
+    color: #f3eeff;
+}
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav a {
+    color: #a884f5;
+    font-size: .9rem;
+    padding: .8rem;
+    transition: all .2s;
+}
+
+.nav a:hover {
+    color: #c74242;
+
+}
+
+.nav h2 {
+    text-transform: capitalize;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    margin-top: 2rem;
+    height: 100%;
+
+}
+
+form.add-form {
+    margin-top: .5rem;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+}
+
+.nTasks {
+    display: flex;
+    padding: 1rem;
+    gap: 2rem;
+    width: 60%;
+    justify-content: center;
+}
+
+
+.view-icon {
+    pointer-events: none;
+}
+
+ul {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.task-item {
+    padding: 1.4rem;
+    color: #fff;
+    transition: all .3s;
+    font-weight: 600;
+    flex: 1;
+    overflow: hidden;
+}
+
+.list-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6798ff;
+    border-radius: .5rem;
+    width: 100%;
+    transition: all 0.25s;
+}
+
+.list-content:hover {
+    transform: translate(0, -7px) scale(1.02);
+}
+
+
+.modified-at {
+    font-size: .7rem;
+}
+
+.status-uncompleted,
+.status-completed {
+    padding: 1.4rem;
+    color: #fff;
+}
+
+.status-completed {
+    font-weight: 600;
+}
+
+.delete {
+    margin: 0 1rem;
+}
+
+.invia {
+    position: absolute;
+    background-color: transparent;
+    right: 0;
+    width: 3rem;
+    height: 100%;
+    cursor: pointer;
+    transition: all .5s;
+    border: none;
+    outline: none;
+
+}
+
+.add-form {
+    position: relative;
+}
+
+.add-task-text {
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: .5rem;
+    outline: none;
+    border: none;
+}
+
+.add-task-text:focus {
+    border-color: rgba(176, 72, 255, 0.6);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(211, 149, 255, 0.6);
+    outline: 0 none;
+}
+
+.annulla {
+    margin-top: 1rem;
+    padding: 1rem;
+    color: #fff;
+    transition: all .3s;
+    font-weight: 600;
+    background-color: #1b1c27;
+}
+
+.annulla:hover {
+    color: #eb5757;
+}
+
+.delete-confirmation {
+    text-align: center;
+    padding: 1rem;
+}
+
+form .conferma {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    transition: all .3s;
+    padding: 1rem;
+    font-weight: 600;
+    background-color: #1b1c27;
+}
+
+form .conferma:hover {
+    color: #57eba3;
+}
+
+
+.fa-check-circle:hover:before {
+    content: "\f1db";
+}
+
+.fa-circle-thin:hover:before {
+    content: "\f058";
+    color: #57eba3;
+}
+
+.fa-check-circle:before {
+    padding: .5rem;
+}
+
+.fa-circle-thin:before {
+    padding: .5rem;
+}
+
+.fa-trash-o:before {
+    font-size: 1.3rem;
+    color: #fff;
+    padding: .3rem;
+    background-color: #ff925c;
+    border-radius: .3rem;
+    transition: all .3s;
+}
+
+.fa-trash-o:hover:before {
+    background-color: #ff5c5c;
+    color: #1b253a;
+}
+
+.delete-form {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.fa-times-circle-o::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 2rem;
+}
+
+.login-form {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+    width: 40%;
+    justify-content: center;
+    background-color: #191a2c;
+    padding: 2rem;
+    border-radius: .5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.username-input,
+.password-input {
+    padding: 1rem 0 .5rem;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    width: 100%;
+    outline: none;
+    border-bottom: #fff solid;
+    transition: all .3s;
+}
+
+.username-input:focus,
+.password-input:focus {
+    border-bottom: #9253f7 solid;
+}
+
+label {
+    position: absolute;
+    top: 25%;
+    left: 2%;
+    transition: all .3s;
+    pointer-events: none;
+}
+.username-input:focus +label,
+.password-input:focus +label{
+    color: #9253f7;
+    top: 0;
+    left: 0;
+    font-size: .8rem;
+}
+.username-input:valid +label,
+.password-input:valid +label{
+    color: #9253f7;
+    top: 0;
+    left: 0;
+    font-size: .8rem;
+}
+
+.form-item {
+    width: 100%;
+    position: relative;
+}
+
+.submit-login-register {
+    padding: .7rem;
+    width: 50%;
+    margin-top: .7rem;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: .3rem;
+    border: none;
+    transition: all .3s;
+    color: #d8c1ff;
+    border: #d8c1ff solid 2px;
+}
+
+.submit-login-register:hover {
+    background-color: #d8c1ff;
+    color: #000;
+}
+
+.success-message {
+    color: #c5b0f5;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0;
+}
+
+.login-form a {
+    color: #7d48d2;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    padding: .5rem;
+}
+
+.form-links{
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    margin-top: .5rem;
+}
+.form-links p{
+    font-size: .9rem;
+}
+
+.form-links a:hover{
+    color:#c74242;
+}
+#welcome-message{
+    font-size: 2rem;
+}
+@media (max-width: 768px) {
+
+    .status-completed,
+    .status-uncompleted {
+        display: none;
+    }
+
+    form.add-form {
+        width: 90%;
+    }
+
+    ul {
+        width: 90%;
+    }
+
+    header {
+        position: relative;
+        padding: 1.2rem;
+        justify-content: center;
+    }
+
+    .nav {
+        position: absolute;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        top: 87.2px;
+        left: 0;
+        background-color: #292d3e;
+        gap: .5rem;
+    }
+
+    .add-task-text {
+        padding: 1rem;
+    }
+
+    .login-form {
+        width: 90%;
+    }
+
+    .nTasks {
+        width: 100%;
+    }
+
+    .submit-login-register {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #logo{
+        font-size: 2rem;
+        color: #fff;
+    }
+
+    .username-input,
+    .password-input {
+        padding: 1rem .2rem .2rem;
+    }
+
+    .container{
+        margin-top: 4rem;
+    }
+
+}

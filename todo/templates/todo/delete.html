@@ -1,0 +1,13 @@
+{% extends 'todo/layout.html' %}
+{% load static %}
+{% block body%}
+<div class="container">
+    <h2 class="delete-confirmation">Sei sicuro di voler eliminare "{{task.title}}"?</h2>
+    <form method ="POST" action="">
+        {% csrf_token %}
+        <a class ="annulla" href="{% url 'home' %}">No</a>
+        <button name ="elimina" class="conferma">Si</button>
+    </form>
+</div>
+
+{% endblock %}

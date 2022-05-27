@@ -1,0 +1,51 @@
+{% extends 'todo/layout.html' %}
+{% block body %}
+
+<div class="container">
+    <form class ="add-form" method='POST' action="{% url 'home'%}">
+        {% csrf_token %}
+        {{form.title}}
+        <button class="invia"><i class="fa fa-plus-circle" aria-hidden="true" style="color:#a884f5; position: relative; font-size: 1.9rem; transition: all .4s;"
+            onMouseOver="
+            this.style.color='#6e53f7'
+            this.style.transform ='rotate(90deg)'"
+            onMouseOut="
+            this.style.color='#a884f5'
+            this.style.transform ='rotate(-90deg)'
+            "></i></button>
+    </form>
+    
+    {% if totalTasks == 0 %}
+    <h3 class="nTasks">Non hai niente da fare :)</h3>
+    {% elif totalTasks == completedTasks %}
+    <h3 class="nTasks">Bravo! Hai finito tutte le task! :D</h3>
+    {% else %}
+    <div class="nTasks">
+        <p><i class="fa fa-list fa-lg view-icon" aria-hidden="true"></i> {{totalTasks}}</p>
+        <p><i class='fa fa-check-circle fa-lg view-icon' aria-hidden='true'></i> {{completedTasks}}</p>
+        <p><i class="fa fa-times-circle fa-lg" aria-hidden="true"></i> {{nUncompletedTasks}}</p>
+    </div>
+    {% endif %}
+    <ul>
+        {% for task in tasks %}
+        <div class="list-content">
+            <a class="task-item" href="{% url 'update' task.id %}">{{ task }}</a>
+            {% if task.Completed == True %}
+            <a class="status-completed" href="{% url 'update' task.id %}">Completato</a>
+            {% else %}
+            <a class="status-uncompleted" href="{% url 'update' task.id %}">Non completato</a>
+            {% endif %}
+            <a class="check" href="{% url 'check' task.id %}"></a>
+            <a class="delete" href="{% url 'delete' task.id %}">
+                <i class="fa fa-trash-o"aria-hidden="true">
+                </i>
+            </a>
+        </div>
+        {% endfor %}
+    
+    </ul>
+    
+    
+</div>
+
+{% endblock %}
